@@ -3,12 +3,12 @@ from flask import Flask, request, jsonify
 import pickle
 
 app = Flask('Wine')
-model = pickle.load(open('model.pkl', 'rb'))
+model = pickle.load(file := open('model.pkl', 'rb'))
 
 
 @app.route('/', methods=['POST'])
 def show():
-    return jsonify(request.json)
+    return jsonify({"data": request.json})
 
 
 @app.route('/predict', methods=['POST'])
@@ -20,8 +20,11 @@ def predict():
     prediction = model.predict(data_to_predict)
 
     output = round(prediction[0], 2)
-    return f"The quality of your wine is {output}"
 
+    return jsonify({"data": f"The quality of your wine is {output} out of 10"})
+
+
+file.close()
 
 if __name__ == "__main__":
     app.run(debug=True)
