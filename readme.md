@@ -2,3 +2,7 @@
 
 - pip3 install -r requirements.txt
 - flask run
+
+## Generate Requirements
+
+- pip freeze>requirements.txt
