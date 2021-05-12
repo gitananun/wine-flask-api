@@ -5,7 +5,7 @@
 
 ## Generate Requirements
 
-- pip freeze>requirements.txt
+- pip freeze > requirements.txt
 
 ## Virtual Environment
 
