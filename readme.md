@@ -6,3 +6,9 @@
 ## Generate Requirements
 
 - pip freeze>requirements.txt
+
+## Virtual Environment
+
+- . venv/bin/activate
+- `install all new packages inside venv environment`
+- `from venv generate requirements.txt`
