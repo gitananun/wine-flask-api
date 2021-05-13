@@ -21,7 +21,7 @@ def predict():
 
     output = round(prediction[0], 2)
 
-    return jsonify({"data": f"The quality of your wine is {output} out of 10"})
+    return jsonify({"value": output, 'max': 10})
 
 
 file.close()
