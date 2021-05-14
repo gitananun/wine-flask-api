@@ -3,9 +3,13 @@ import numpy as np
 from sklearn.linear_model import LinearRegression
 import pickle
 
-dataset = pd.read_csv('data/winequality-red.csv')
+wine1 = pd.read_excel('./data/wine-data-2.xlsx')
+wine2 = pd.read_csv('./data/winequality-red.csv')
+
+dataset = pd.merge(wine1, wine2, how="outer")
 
 dataset.columns = [i.replace(' ', '_') for i in dataset.columns]
+dataset.drop_duplicates(inplace=True)
 
 margin_to_ten = 10 - dataset.quality.max()
 dataset.quality = [i + margin_to_ten for i in dataset.quality]
