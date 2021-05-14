@@ -15,6 +15,8 @@ def show():
 def predict():
     data = request.json
 
+    request.headers.add("Access-Control-Allow-Origin", "*")
+
     data_to_predict = [pd.Series(data)]
 
     prediction = model.predict(data_to_predict)
