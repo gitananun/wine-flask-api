@@ -1,6 +1,6 @@
 alabaster==0.7.12
 click==8.0.0
-Flask==2.0.0
+Flask==2.3.2
 gunicorn==20.1.0
 itsdangerous==2.0.0
 Jinja2==3.0.0
